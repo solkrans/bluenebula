@@ -59,6 +59,33 @@ systemctl enable podman.socket
 
 echo "::endgroup::"
 
+echo "::group:: Apply bluenebula Branding"
+
+if [[ -f /usr/lib/os-release ]]; then
+    sed -i \
+        -e 's/^NAME=.*/NAME="bluenebula"/' \
+        -e 's/^ID=.*/ID=bluenebula/' \
+        -e 's/^PRETTY_NAME=.*/PRETTY_NAME="bluenebula"/' \
+        -e 's/^DEFAULT_HOSTNAME=.*/DEFAULT_HOSTNAME=bluenebula/' \
+        /usr/lib/os-release
+fi
+
+echo "::endgroup::"
+
+echo "::group:: Run Additional Build Scripts"
+
+for script in "$@"; do
+    if [[ ! -x "$script" ]]; then
+        echo "Skipping non-executable script: $script"
+        continue
+    fi
+
+    echo "Running: $script"
+    "$script"
+done
+
+echo "::endgroup::"
+
 # Restore default glob behavior
 shopt -u nullglob
 
