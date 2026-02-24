@@ -12,6 +12,7 @@ brew "rg"         # ripgrep - faster grep
 # Development tools
 brew "gh"         # GitHub CLI
 brew "git"        # Git version control
+brew "asdf"       # Tool version manager
 
 # Shell enhancements  
 brew "starship"   # Cross-shell prompt
