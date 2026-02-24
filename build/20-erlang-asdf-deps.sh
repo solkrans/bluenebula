@@ -22,7 +22,7 @@ dnf5 install -y \
     wxGTK-devel \
     wxBase \
     openssl-devel \
-    java-1.8.0-openjdk-devel \
+    java-21-openjdk-devel \
     libiodbc \
     unixODBC-devel \
     erlang-odbc \
