@@ -8,10 +8,11 @@ brew "bat"        # cat with syntax highlighting
 brew "eza"        # Modern replacement for ls
 brew "fd"         # Simple, fast alternative to find
 brew "rg"         # ripgrep - faster grep
+brew "lazygit"    # TUI for Git
 
 # Development tools
 brew "gh"         # GitHub CLI
-brew "git"        # Git version control
+# brew "git"        # Git version control
 brew "asdf"       # Tool version manager
 
 # Shell enhancements  

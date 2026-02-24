@@ -63,16 +63,6 @@ echo "::group:: Configure Display Manager"
 # Enable cosmic-greeter (COSMIC's display manager)
 systemctl enable cosmic-greeter
 
-# Set COSMIC as default session
-mkdir -p /etc/X11/sessions
-cat > /etc/X11/sessions/cosmic.desktop << 'COSMICDESKTOP'
-[Desktop Entry]
-Name=COSMIC
-Comment=COSMIC Desktop Environment
-Exec=cosmic-session
-Type=Application
-DesktopNames=COSMIC
-COSMICDESKTOP
 
 echo "Display manager configured"
 echo "::endgroup::"
@@ -81,9 +71,18 @@ echo "::group:: Install Additional Utilities"
 
 # Install additional utilities that work well with COSMIC
 dnf5 install -y \
-    kitty \
     flatpak \
     xdg-desktop-portal-cosmic
+copr_install_isolated "wezfurlong/wezterm-nightly" wezterm
+
+# Optional COSMIC extras (uncomment to include):
+dnf5 install -y \
+    cosmic-store \
+    cosmic-screenshot \
+    cosmic-player \
+    cosmic-randr
+# pop-launcher is typically pulled by dependencies, but can be pinned explicitly:
+# dnf5 install -y pop-launcher
 
 echo "Additional utilities installed"
 echo "::endgroup::"
