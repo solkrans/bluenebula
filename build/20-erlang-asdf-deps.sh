@@ -27,6 +27,7 @@ dnf5 install -y \
     unixODBC-devel \
     erlang-odbc \
     libxslt \
-    fop
+    fop \
+    inotify-tools
 
 echo "::endgroup::"
