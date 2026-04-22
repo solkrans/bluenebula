@@ -26,6 +26,7 @@ Use @projectbluefin/finpilot as a template, name the OS the repository name. Ens
 
 ### Build System
 - Automated builds via GitHub Actions on every commit
+- Scheduled build also runs at 10:05 UTC on odd-numbered calendar days
 - Awesome self hosted Renovate setup that keeps all your images and actions up to date.
 - Automatic cleanup of old images (90+ days) to keep it tidy
 - Pull request workflow - test changes before merging to main
