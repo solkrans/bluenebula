@@ -84,6 +84,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build/20-erlang-asdf-deps.sh \
     /ctx/build/21-dotnet.sh \
     /ctx/build/22-rust.sh \
+    /ctx/build/23-wine.sh \
     /ctx/build/30-cosmic-desktop.sh
 
 ### LINTING
